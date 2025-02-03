@@ -38,7 +38,6 @@
   사용자가 원하는 맞춤형 관광지 추천 및 전국의 다양한 관광지 정보 제공 챗봇
 
 
-
 ## 프로젝트 필요성 및 배경
   
    관광 산업의 중요성
@@ -56,8 +55,15 @@
 
 ---
 # 1. 기술 스택
-
+Python<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
 ## 주요 프로시저
+ 데이터 수집 및 전처리
+ 
+ 모델 학습
+ 
+ 모델 평가
+ 
+ 모델 배포
  
 ## 수행결과(테스트/시연 페이지)
  
