@@ -4,6 +4,28 @@
  
 # 1. 팀 소개
 - 팀명
+  <table>
+  <tr>
+    <th>김나예</th>
+    <th>김서진</th>
+    <th>유수현</th>
+    <th>정승연</th>
+   
+  </tr>
+  <tr>
+    <td><img src="" width="175" height="175"></td>
+    <td><img src= "" width="175" height="175"></td>
+    <td><img src="" width="175" height="175"></td>
+    <td><img src="" width="175" height="175"></td>
+  </tr>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</table>
+
 - 멤버 개인 깃허브 계정과 연동
  
 # 2. 프로젝트 개요
