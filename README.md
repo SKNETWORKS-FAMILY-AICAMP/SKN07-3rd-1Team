@@ -56,6 +56,7 @@
 ---
 # 1. 기술 스택
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"> 
+
 ## 주요 프로시저
  데이터 수집 및 전처리
  
