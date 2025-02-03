@@ -39,6 +39,7 @@
 
 
 
+
 ## 프로젝트 필요성 및 배경
   
 관광 산업은 전 세계적으로 중요한 경제 활동 중 하나로 코로나 이후 관광 산업이 더욱 활발해졌습니다. 이 챗봇을 통해 관광객들이 더 다양하고 몰랐던 지역에서 숙박, 관광 등을 하며 다양한 산업에 긍적인 영향을 미칠 수 있습니다.
@@ -59,14 +60,6 @@
 # 1. 기술 스택
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/streamlit-E34F26?style=for-the-badge&logo=streamlit&logoColor=white"> <img src="https://img.shields.io/badge/openai-412991?style=for-the-badge&logo=openai&logoColor=white"> <img src="https://img.shields.io/badge/langchain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white">
 
-
-## 주요 프로시저
-
- 데이터 수집 및 전처리
- 
- 모델 학습, 평가, 배포
- 
- 
 ## 수행결과(테스트/시연 페이지)
  
 ## 한 줄 회고
