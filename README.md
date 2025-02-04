@@ -192,7 +192,7 @@ suksoDF.to_csv('./data/suksoDF.csv', index=False, encoding='utf-8')
   ``` python
   # Document 객체 생성
   # page_content: 속성 값, metadata: ID 값 
-  Document(page_content=f"관광지명: {row['name']} 주소: {row['address']}, 소개: {row['overview']}, 숙소정보:         {row['generalInfo']}, 객실정보: {row['roomInfo']}", metadata={"id": idx}) for idx, row in df.iterrows()
+  Document(page_content=f"관광지명: {row['name']} 주소: {row['address']}, 소개: {row['overview']}, 숙소정보: {row['generalInfo']}, 객실정보: {row['roomInfo']}", metadata={"id": idx}) for idx, row in df.iterrows()
   ```
   
 ### 3.3. RAG 구현 
