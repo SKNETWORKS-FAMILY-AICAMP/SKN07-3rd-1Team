@@ -16,7 +16,7 @@
     <td><img src="" width="175" height="175"></td>
     <td><img src= "" width="175" height="175"></td>
     <td><img src="" width="175" height="175"></td>
-    <td><img src="" width="175" height="175"></td>
+    <td><img src="![스크린샷 2025-02-04 145447](https://github.com/user-attachments/assets/1d39740b-46dc-4fb9-b09b-65dd5ecbe875)" width="175" height="175"></td>
   </tr>
   <tr>
     <th></th>
