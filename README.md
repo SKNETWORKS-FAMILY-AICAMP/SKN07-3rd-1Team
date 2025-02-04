@@ -22,7 +22,7 @@
   </tr>
   <tr></tr>
 
-    <th>프롬프트 설계 및 streamlit 연동</th>
+    <th>프롬프트 작성, streamlit 연동</th>
     <th>streamlit 화면 구현</th>
     <th>데이터 전처리</th>
     <th>RAG 구현</th>
