@@ -12,11 +12,12 @@
     <th>정승연</th>
    
   </tr>
+
   <tr>
-    <td><img src="" width="175" height="175"></td>
+    <td><img src="![동숲-레이니](https://github.com/user-attachments/assets/f9aae98c-97d9-475c-9fc7-87d25a0d0c9d)" width="175" height="175"></td>
     <td><img src= "" width="175" height="175"></td>
     <td><img src="" width="175" height="175"></td>
-    <td><img src="![스크린샷 2025-02-04 145447](https://github.com/user-attachments/assets/1d39740b-46dc-4fb9-b09b-65dd5ecbe875)" width="175" height="175"></td>
+    <td><img src="" width="175" height="175"></td>
   </tr>
   <tr>
     <th></th>
