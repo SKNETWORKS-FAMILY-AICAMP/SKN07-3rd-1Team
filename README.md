@@ -6,6 +6,7 @@
 - 팀명
   <table>
   <tr>
+
     <th>김나예</th>
     <th>김서진</th>
     <th>유수현</th>
@@ -14,10 +15,10 @@
   </tr>
 
   <tr>
-    <td><img src="![동숲-레이니](https://github.com/user-attachments/assets/f9aae98c-97d9-475c-9fc7-87d25a0d0c9d)" width="175" height="175"></td>
+    <td><img src="![SE-3ff16930-9aaf-494b-8c47-ad42b870f677](https://github.com/user-attachments/assets/65d597d6-4c4a-492d-94a0-60f27a4b4746)" width="175" height="175"></td>
     <td><img src= "" width="175" height="175"></td>
-    <td><img src="" width="175" height="175"></td>
-    <td><img src="" width="175" height="175"></td>
+    <td><img src="![download](https://github.com/user-attachments/assets/7d89ed98-fb33-4f54-afae-f72eac621331)" width="175" height="175"></td>
+    <td><img src="![images](https://github.com/user-attachments/assets/392700de-a023-43d3-b60c-96d624252f2a)" width="175" height="175"></td>
   </tr>
   <tr>
     <th></th>
