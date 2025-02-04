@@ -88,7 +88,9 @@ def get_answer_from_db(user_query, chat_history):
     context = "\n".join([result.page_content for result in results])
 
     messages = chat_history.copy()
-    messages.append(HumanMessage(content=f"사용자 질문: {user_query}\n\n참고할 정보:\n{context}\n\n이 정보를 기반으로 정확하게 답변해 주세요.  {user_query}의 요구사항과 {context}\n\n의 정보가 일치하지 않으면 제외하고 답변해 주세요."))
+    messages.append(HumanMessage(content=f"사용자 질문: {user_query}\n\n   \
+    참고할 정보:\n{context}\n\n이 정보를 기반으로 정확하게 답변해 주세요.  \
+    {user_query}의 요구사항과 {context}\n\n의 정보가 일치하지 않으면 제외하고 답변해 주세요."))
 
     response = llm(messages)
     print(f"Response from ChatGPT: {response.content}")
@@ -96,8 +98,8 @@ def get_answer_from_db(user_query, chat_history):
 
 # ---------- Streamlit 구현
 
-st.set_page_config(page_title="상담 챗봇", layout="wide", initial_sidebar_state="collapsed")
-st.title("🏨숙소봇🤖")
+st.set_page_config(page_title="작지만 강한 숙박 추천 챗봇, 숙박구리", layout="wide", initial_sidebar_state="collapsed")
+st.title("📂숙박구리🦝")
 
 st.markdown(
     """
@@ -141,7 +143,7 @@ st.markdown(
 
 # 대화 기록 저장
 if 'messages' not in st.session_state:
-    st.session_state['messages'] = [SystemMessage(content="너는 친절하고 사용자 요구사항에 맞는 숙소를 추천해주는 가이드야. 사용자의 질문에 세심하게 답변해줘.")]
+    st.session_state['messages'] = [SystemMessage(content="너는 사용자 요구사항에 맞는 숙소를 추천해주는 가이드야. 사용자의 질문에 친절하고 세심하게 답변해줘.")]
 
 with st.form("질문하세요"):
     text = st.text_area("질문 입력:", '')
@@ -158,7 +160,7 @@ for message in st.session_state['messages']:
     if isinstance(message, HumanMessage):
         st.markdown(f"<div class='chat-message human-message'><strong>👩🏻:</strong> {message.content}</div>", unsafe_allow_html=True)
     elif isinstance(message, AIMessage):
-        st.markdown(f"<div class='chat-message ai-message'><strong>🤖:</strong> {message.content}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='chat-message ai-message'><strong>🦝:</strong> {message.content}</div>", unsafe_allow_html=True)
 
 if submitted and not text:
-    st.warning("질문을 입력하세요.")
+    st.warning("어떤 숙소를 찾으세요?")
