@@ -193,7 +193,47 @@ streamlit을 사용하여 웹을 만들기
 Langchain을 이용하여 질문을 입력하면 답변이 나오는 챗봇
 
 Markdown을 이용하여 챗봇의 대화 기록을 깔끔하게 표시하고 대화창을 디자인
-
+```python
+st.markdown(
+    """
+    <style>
+    .chat-message {
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .human-message {
+        background-color: #F0F8FF; 
+        text-align: left;
+        color: black;
+    }
+    .ai-message {
+        background-color: #E6E6FA; 
+        text-align: left;
+        color: black;
+    }
+    .stButton > button {
+        background-color: yellow; 
+        border: none;
+        color: black;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .stButton > button:hover {
+        background-color: #ffcc00; 
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+```
 ---
 ## 4. 기술 Stack
  - ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
