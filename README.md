@@ -71,11 +71,11 @@ GPT도 정확히 알 수 없는 부대시설, 객실 어메니티 정보를 알�
 ### 3.5 Streamlit을 이용한 웹 구현 
 
 ---
-# 1. 기술 스택
+## 4. 기술 Stack
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/streamlit-E34F26?style=for-the-badge&logo=streamlit&logoColor=white"> <img src="https://img.shields.io/badge/openai-412991?style=for-the-badge&logo=openai&logoColor=white"> <img src="https://img.shields.io/badge/langchain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white">
 
 ---
-## 수행결과(테스트/시연 페이지)
+## 5. 수행 결과(테스트/시연 페이지)
 
 --- 
 ## 한 줄 회고
