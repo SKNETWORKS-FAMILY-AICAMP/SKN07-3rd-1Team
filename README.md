@@ -187,12 +187,22 @@ suksoDF.to_csv('./data/suksoDF.csv', index=False, encoding='utf-8')
 
 ### 3.4 프롬프트 작성
 
+- 질문과 유사성이 높은 5개의 답변을 검색해 참조하도록 설정
+```
+results = db.similarity_search(user_query, k=5)
+```
+- 이전 채팅 내역 참조
+- 유사성이 높은 5개의 답변을 하나의 context로 묶고, 요구사항에 대해 정확하게 답변하도록 조건 부여
+```
+messages = chat_history.copy()
+messages.append(HumanMessage(content=f"사용자 질문: {user_query}\n\n   \
+참고할 정보:\n{context}\n\n이 정보를 기반으로 정확하게 답변해 주세요.  \
+{user_query}의 요구사항과 {context}\n\n의 정보가 일치하지 않으면 제외하고 답변해 주세요."))
+```
+
 ### 3.5 Streamlit을 이용한 웹 구현 
-streamlit을 사용하여 웹을 만들기 
 
-Langchain을 이용하여 질문을 입력하면 답변이 나오는 챗봇
-
-Markdown을 이용하여 챗봇의 대화 기록을 깔끔하게 표시하고 대화창을 디자인
+- Markdown을 이용하여 챗봇의 대화 기록을 깔끔하게 표시하도록 디자인
 ```python
 st.markdown(
     """
@@ -233,6 +243,22 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+```
+- streamlit의 session_state 기능을 사용해 이전 채팅 내역을 기억하도록 작성
+- 질문과 답변은 session_state에 추가하여, 새로 질문을 입력할 때마다 이전 내용을 참조하도록 함
+```
+if 'messages' not in st.session_state:
+    st.session_state['messages'] = [SystemMessage(content="너는 사용자 요구사항에 맞는 숙소를 추천해주는 가이드야. 사용자의 질문에 친절하고 세심하게 답변해줘.")]
+
+with st.form("질문하세요"):
+    text = st.text_area("질문 입력:", '')
+    submitted = st.form_submit_button("보내기")
+
+if submitted and text:
+    chat_history = st.session_state['messages']
+    response = get_answer_from_db(text, chat_history)
+    st.session_state['messages'].append(HumanMessage(content=text))
+    st.session_state['messages'].append(AIMessage(content=response))
 ```
 ---
 ## 4. 기술 Stack
