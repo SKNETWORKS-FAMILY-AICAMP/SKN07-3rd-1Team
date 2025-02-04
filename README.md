@@ -181,9 +181,30 @@ suksoDF = pd.DataFrame(suk_data)
 suksoDF.to_csv('./data/suksoDF.csv', index=False, encoding='utf-8')
 ```
 
-### 3.2. 데이터 로드 및 텍스트 분할
-
-### 3.3. 데이터 벡터화 및 저장
+### 3.2. 텍스트 벡터화 및 Chromadb 저장 
+- 전처리한 데이터를 벡터화
+  - OpenAI 임베딩 text-embedding-ada-002 모델 사용
+- Chromadb 저장
+  ``` python
+  # Document 객체 생성
+  # page_content: 속성 값, metadata: ID 값 
+  Document(page_content=f"관광지명: {row['name']} 주소: {row['address']}, 소개: {row['overview']}, 숙소정보:         {row['generalInfo']}, 객실정보: {row['roomInfo']}", metadata={"id": idx}) for idx, row in df.iterrows()
+  ```
+  
+### 3.3. RAG 구현 
+- gpt-4o-2024-08-06 모델 사용 
+- 검색 기반 시스템 **RetrievalQA 객체** 활용
+  - 다양한 정보와 대규모 문서 집합 처리 시 효율적
+ 
+  ``` python
+  # RetrievalQA 객체를 사용하여 검색 및 답변 생성
+  qa_chain = RetrievalQA.from_chain_type(
+      llm=llm,
+      #여러 문서에 대해 각 문서에서 독립적으로 답변을 추출한 후, 하나로 결합하는 방식 
+      chain_type="map_reduce", 
+      retriever=db.as_retriever()
+  )
+  ``` 
 
 ### 3.4 프롬프트 작성
 
@@ -263,7 +284,7 @@ if submitted and text:
 ---
 ## 4. 기술 Stack
  - ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
- - ![LangChain](https://img.shields.io/badge/LangChain-0.3.7-orange)
+ - ![LangChain](https://img.shields.io/badge/LangChain-0.1.16-orange)
  - ![Chroma](https://img.shields.io/badge/Chroma-Vector%20DB-0091FF?style=flat&logo=pinecone&logoColor=white)
  - ![OpenAI GPT-3.5 turbo](https://img.shields.io/badge/OpenAI-GPT--3.5--turbo-blueviolet?logo=openai&logoColor=white)
  - ![OpenAI GPT-4](https://img.shields.io/badge/OpenAI-GPT--4-blueviolet?logo=openai&logoColor=white)
