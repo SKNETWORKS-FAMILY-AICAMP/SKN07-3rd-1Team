@@ -62,7 +62,7 @@ GPT도 정확히 알 수 없는 부대시설, 객실 어메니티 정보를 알�
 ### 3.1 데이터 수집
 - Open API 활용 : TourAPI 4.0 
 
-- 전체 숙소리스트를 가져오는 api로 숙소의 명칭과 contentid, contenttypeid 리스트화 (infoDF)
+- 전체 숙소 리스트를 가져오는 api로 숙소의 명칭과 contentid, contenttypeid 리스트화 (infoDF)
 ``` python
 import requests
 from bs4 import BeautifulSoup
@@ -82,20 +82,20 @@ for x in items:
 
 infoDF = pd.DataFrame(data)
 ``` 
-- infoDF 를 사용해 개별 숙소의 기본정보, 숙소정보, 객실정보 조회 api를 사용해 데이터 취합 및 DF 작성성
+- infoDF 를 사용해 개별 숙소의 기본정보, 숙소정보, 객실정보 조회 api를 사용해 데이터 취합 및 DF 작성
 ``` python
 # 데이터 취합
 infoData = []
 from tqdm import tqdm
 for x in tqdm(range(3887)):
-    # infoDF 데이터 사용용
+    # infoDF 데이터 사용
     title = infoDF.loc[x]['title']
     contentid = infoDF.loc[x]['contentid']
     contenttypeid = infoDF.loc[x]['contenttypeid']
 
     # 기본정보 조회함수 : 주소, 설명, 이미지링크
     addr1, overview, imglilk = selectInfo2(contentid, contenttypeid)
-    # 숙소정보 조회함수 : 숙소의 전제적인 정보보
+    # 숙소정보 조회함수 : 숙소의 전제적인 정보
     txtinfo = sukso_info(contentid, contenttypeid)
     # 객실정보 조회함수 : 숙소에 속하는 객실별 정보 리스트로 get
     all_room_info = room_info(contentid, contenttypeid)
@@ -119,8 +119,8 @@ suksoDF = pd.DataFrame(suk_data)
 
 ``` 
 
-- 취합 데이터의 오류 정정및 가중치 부여를 위한한 tag 작성 
-  - 지역을 tag에 포함함
+- 취합 데이터의 오류 정정 및 가중치 부여를 위한 tag 작성 
+  - 지역을 tag에 포함
   ``` python
   # 태그 추출 함수 (최적화)
   def extract_tag(row):
@@ -141,14 +141,14 @@ suksoDF = pd.DataFrame(suk_data)
 
   - 영어주소 -> 한글 변경 
   ``` python
-  suksoDF['tag'].unique() # 잘못입력된 내용 확인 후 
-  # 주소 오류 수기 수정정
+  suksoDF['tag'].unique() # 잘못 입력된 내용 확인 후 
+  # 주소 오류 수기 수정
   suksoDF.loc[suksoDF['address'].str.contains('18, Hoegi-ro', na=False), 'address'] = '서울특별시 동대문구 회기로 29길 18'
   suksoDF.loc[suksoDF['tag'].str.contains('18, Hoegi-ro', na=False), 'tag'] = '서울특별시 동대문구'
 
   ```
 
-  - 태그강화를 위해 지역명 tag추가 
+  - 태그 강화를 위해 지역명 tag 추가 
   ``` python
   suksoDF.loc[suksoDF['tag'].str.contains('강원도', na=False), 'tag'] = suksoDF['tag'] + ' 강원특별자치도'
   suksoDF.loc[suksoDF['tag'].str.contains('강원특별자치도', na=False), 'tag'] = suksoDF['tag'] + ' 강원도'
@@ -171,7 +171,7 @@ suksoDF = pd.DataFrame(suk_data)
 
   ```
 
-  - 소개문구내 특정 문구 추출해 tag입력(시간 부족이슈롤 추가 정리 필요: '오션뷰', '바다', '도심지' 등의 키워드)
+  - 소개문구내 특정 문구 추출해 tag입력 (시간 부족으로 인해 추가 정리 필요: '오션뷰', '바다', '도심지' 등의 키워드)
   ``` python
   suksoDF.loc[suksoDF['overview'].str.contains('한옥', na=False), 'tag'] = suksoDF['tag'] + ' 한옥'
 
