@@ -1,7 +1,7 @@
 # SKN07-3rd-1Team
 
 # 3차 프로젝트
---- 
+
 ## 1. 팀 소개
 - 팀명
   <table>
@@ -24,11 +24,12 @@
     <th></th>
     <th></th>
   </tr>
-</table>
+  </table>
 
 - 멤버 개인 깃허브 계정과 연동
+
+---
  
- ---
 ## 2. 프로젝트 개요
 
 ### 2.1 프로젝트 명
@@ -55,7 +56,7 @@ GPT도 정확히 알 수 없는 부대시설, 객실 어메니티 정보를 알�
 - 편리하고 직관적인 **UI 인터페이스**
 - **RAG 방식**을 접목해 보다 구체적이고 정확한 답변 제공
 
-
+---
 ## 3. 수행 과정
 
 1. 데이터 로드 및 텍스트 분할
@@ -70,8 +71,10 @@ GPT도 정확히 알 수 없는 부대시설, 객실 어메니티 정보를 알�
 # 1. 기술 스택
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/streamlit-E34F26?style=for-the-badge&logo=streamlit&logoColor=white"> <img src="https://img.shields.io/badge/openai-412991?style=for-the-badge&logo=openai&logoColor=white"> <img src="https://img.shields.io/badge/langchain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white">
 
+---
 ## 수행결과(테스트/시연 페이지)
- 
+
+--- 
 ## 한 줄 회고
 - 김나예:
 - 김서진:
