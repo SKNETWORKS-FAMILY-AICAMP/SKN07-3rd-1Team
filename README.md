@@ -188,6 +188,11 @@ suksoDF.to_csv('./data/suksoDF.csv', index=False, encoding='utf-8')
 ### 3.4 프롬프트 작성
 
 ### 3.5 Streamlit을 이용한 웹 구현 
+streamlit을 사용하여 웹을 만들기 
+
+Langchain을 이용하여 질문을 입력하면 답변이 나오는 챗봇
+
+Markdown을 이용하여 챗봇의 대화 기록을 깔끔하게 표시하고 대화창을 디자인
 
 ---
 ## 4. 기술 Stack
