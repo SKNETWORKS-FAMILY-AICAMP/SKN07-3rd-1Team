@@ -12,7 +12,7 @@ from langchain.schema import HumanMessage, AIMessage, SystemMessage
 
 
 ## ---------- 데이터베이스 초기화 및 체크
-db_path = './sbgr_data/'
+db_path = './accomodation_data/'
 db_initialized = os.path.exists(db_path)
 
 if not db_initialized:
@@ -30,7 +30,7 @@ if not db_initialized:
     )
 
     # 벡터화 된 데이터를 DB에 저장
-    documents = [Document(page_content=f"관광지명: {row['name']} 주소: {row['address']}, 소개: {row['overview']}, 숙소정보: {row['generalInfo']}, 객실정보: {row['roomInfo']}, 숙소이미지: {row['imglink']}", metadata={"id": idx}) for idx, row in df.iterrows()]
+    documents = [Document(page_content=f"관광지명: {row['name']} 주소: {row['address']}, 소개: {row['overview']}, 숙소정보: {row['generalInfo']}, 객실정보: {row['roomInfo']}", metadata={"id": idx}) for idx, row in df.iterrows()]
 
     # 문서 배치를 나누는 함수
     def batch_documents(documents, batch_size):
@@ -90,8 +90,7 @@ def get_answer_from_db(user_query, chat_history):
     messages = chat_history.copy()
     messages.append(HumanMessage(content=f"사용자 질문: {user_query}\n\n   \
     참고할 정보:\n{context}\n\n이 정보를 기반으로 정확하게 답변해 주세요.  \
-    {user_query}의 요구사항과 {context}\n\n의 정보가 일치하지 않으면 제외하고 답변해 주세요. \
-    {context}에 이미지 링크가 있으면, 첫 번째 이미지만 크기를 50% 비율로 변경해 출력해주세요."))
+    {user_query}의 요구사항과 {context}\n\n의 정보가 일치하지 않으면 제외하고 답변해 주세요."))
 
     response = llm(messages)
     print(f"Response from ChatGPT: {response.content}")
