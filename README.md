@@ -221,8 +221,9 @@ results = db.similarity_search(user_query, k=5)
 ```
 messages = chat_history.copy()
 messages.append(HumanMessage(content=f"사용자 질문: {user_query}\n\n   \
-참고할 정보:\n{context}\n\n이 정보를 기반으로 정확하게 답변해 주세요.  \
-{user_query}의 요구사항과 {context}\n\n의 정보가 일치하지 않으면 제외하고 답변해 주세요."))
+    참고할 정보:\n{context}\n\n이 정보를 기반으로 정확하게 답변해 주세요.  \
+    {user_query}의 요구사항과 {context}\n\n의 정보가 일치하지 않으면 제외하고 답변해 주세요. \
+    {context}에 이미지 링크가 있으면, 첫 번째 이미지만 크기를 50% 비율로 변경해 출력해주세요."))
 ```
 
 ### 3.5 Streamlit을 이용한 웹 구현 
