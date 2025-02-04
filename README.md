@@ -191,7 +191,12 @@ suksoDF.to_csv('./data/suksoDF.csv', index=False, encoding='utf-8')
 
 ---
 ## 4. 기술 Stack
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/streamlit-E34F26?style=for-the-badge&logo=streamlit&logoColor=white"> <img src="https://img.shields.io/badge/openai-412991?style=for-the-badge&logo=openai&logoColor=white"> <img src="https://img.shields.io/badge/langchain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white">
+ - ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
+ - ![LangChain](https://img.shields.io/badge/LangChain-0.3.7-orange)
+ - ![Chroma](https://img.shields.io/badge/Chroma-Vector%20DB-0091FF?style=flat&logo=pinecone&logoColor=white)
+ - ![OpenAI GPT-3.5 turbo](https://img.shields.io/badge/OpenAI-GPT--3.5--turbo-blueviolet?logo=openai&logoColor=white)
+ - ![OpenAI GPT-4](https://img.shields.io/badge/OpenAI-GPT--4-blueviolet?logo=openai&logoColor=white)
+ - ![Streamlit](https://img.shields.io/badge/Streamlit-1.39.0-red?logo=streamlit&logoColor=white)
 
 ---
 ## 5. 수행 결과(테스트/시연 페이지)
